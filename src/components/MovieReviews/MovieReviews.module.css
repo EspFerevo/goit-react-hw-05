@@ -1,0 +1,36 @@
+.container {
+  padding: 20px;
+  background: linear-gradient(to right, #3a1c71, #d76d77, #ffaf7b);
+  border-radius: 10px;
+  color: #ecf0f1;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.item {
+  background-color: #34495e;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.name {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.text {
+  line-height: 1.5;
+}
