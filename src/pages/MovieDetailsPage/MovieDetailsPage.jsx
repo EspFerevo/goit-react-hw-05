@@ -5,7 +5,7 @@ import {
   useLocation,
   useParams,
 } from "react-router-dom";
-import { Suspense, useEffect, useState } from "react";
+import { Suspense, useEffect, useState, useRef } from "react";
 import { getMovieById } from "../../fetch-api";
 import Loading from "../../components/Loading/Loading";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
@@ -23,7 +23,7 @@ const MovieDetailsPage = () => {
   const { movieId } = useParams();
 
   const location = useLocation();
-  const goBack = location.state?.from ?? "/movies";
+  const goBackRef = useRef(location.state?.from ?? "/movies");
 
   useEffect(() => {
     async function getFilmInfo() {
@@ -44,7 +44,7 @@ const MovieDetailsPage = () => {
 
   return (
     <div className={style.container}>
-      <Link className={style.backLink} to={goBack}>
+      <Link className={style.backLink} to={goBackRef.current}>
         <IoIosArrowBack className={style.backIcon} />
         Go Back
       </Link>
